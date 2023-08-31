@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Studio</title>
     <link rel="stylesheet" href="./css/normalize.css" />
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/mainmin.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -32,7 +32,7 @@
             </li>
           </ul>
         </nav>
-        <ul class="contact-links list">
+        <ul class="contact list">
           <li class="contact__item">
             <a class="contact__link" href="mailto:info@devstudio.com"
               >info@devstudio.com</a
@@ -44,6 +44,11 @@
             >
           </li>
         </ul>
+        <button type="button" class="burger-button js-open-menu">
+          <svg class="burger-svg" width="32" height="22">
+            <use href="./images/icons.svg#icon-menu-hamburger"></use>
+          </svg>
+        </button>
       </div>
     </header>
     <main>
@@ -459,6 +464,7 @@
                   class="form__input"
                   type="text"
                   name="username"
+                  pattern="[A-Za-z]{1,32}"
                   required
                 />
               </div>
@@ -472,7 +478,7 @@
                   </svg>
                 </span>
                 <input
-                  class="form__input"
+                  class="form__input no-arrow"
                   type="number"
                   name="user-phone"
                   required
@@ -509,6 +515,7 @@
                 id="terms"
                 type="checkbox"
                 name="terms"
+                onchange="this.setCustomValidity(validity.valueMissing ? 'Please indicate that you accept the Terms and Conditions' : '');"
                 required
               />
               <span class="form__checkbox--icon">
@@ -527,6 +534,95 @@
       </div>
     </div>
 
+    <div class="mob-menu js-menu-container">
+      <div class="mob-menu-container">
+        <button class="mob-close-button js-close-menu" type="button">
+          <svg class="close-icon" width="8" height="8">
+            <use href="./images/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+        <nav class="mob-header-nav">
+          <ul class="mob-nav-list list">
+            <li class="mob-nav-item">
+              <a href="./index.html" class="mob-nav-link link current"
+                >Studio</a
+              >
+            </li>
+            <li class="mob-nav-item">
+              <a href="./portfolio.html" class="mob-nav-link link">Portfolio</a>
+            </li>
+            <li class="mob-nav-item">
+              <a href="" class="mob-nav-link link">Contacts</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="mob-bottom">
+          <div class="mob-header-address">
+            <div class="mob-bottom">
+              <address class="mob-header-address">
+                <ul class="mobile-menu-link list">
+                  <li class="tel">
+                    <a
+                      href="tel:+110001111111"
+                      target="_blank"
+                      class="link tel-color"
+                      >+11 (000) 111-11-11</a
+                    >
+                  </li>
+                  <li class="emeil">
+                    <a
+                      href="mailto:info@devstudio.com"
+                      target="_blank"
+                      class="mob-address-link link"
+                      >info@devstudio.com</a
+                    >
+                  </li>
+                </ul>
+              </address>
+              <ul class="mob-soc-list list">
+                <li class="mob-soc-item">
+                  <a href="" class="mob-soc-link link">
+                    <svg class="media-logo" width="24" height="24">
+                      <use href="./images/icons.svg#icon-instagram"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="mob-soc-item">
+                  <a href="" class="mob-soc-link link">
+                    <svg class="media-logo" width="24" height="24">
+                      <use href="./images/icons.svg#icon-twitter"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="mob-soc-item">
+                  <a href="" class="mob-soc-link link">
+                    <svg class="media-logo" width="24" height="24">
+                      <use href="./images/icons.svg#icon-facebook"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="mob-soc-item">
+                  <a href="" class="mob-soc-link link">
+                    <svg class="media-logo" width="24" height="24">
+                      <use href="./images/icons.svg#icon-linkedin"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="./js/modal.js"></script>
+    <script defer src="./js/mobile-menu.js"></script>
+    <script>
+      document
+        .getElementById("terms")
+        .setCustomValidity(
+          "Please indicate that you accept the Terms and Conditions"
+        );
+    </script>
   </body>
 </html>

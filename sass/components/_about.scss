@@ -1,0 +1,18 @@
+.about {
+  @media screen and (max-width: 1157.9px) {
+    display: none;
+  }
+  @media screen and (min-width: 1158px) {
+    &__list {
+      display: flex;
+      gap: 24px;
+      justify-content: space-between;
+    }
+    &__heading {
+      color: var(--dark);
+      text-align: center;
+      @include font(700, 36px, 1.11, 0.02em);
+      margin-bottom: 72px;
+    }
+  }
+}

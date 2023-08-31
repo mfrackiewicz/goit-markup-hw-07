@@ -1,0 +1,16 @@
+.logo {
+  color: var(--primary-brand);
+  font-family: var(--secondary-font);
+  @include font(800, 18px, 1.17, 0.03em);
+  text-decoration: none;
+  @media screen and (min-width: 768px) and (max-width: 1157.9px) {
+    display: flex;
+    align-items: center;
+  }
+  &--header-color {
+    color: var(--dark);
+  }
+  &--footer-color {
+    color: var(--light);
+  }
+}

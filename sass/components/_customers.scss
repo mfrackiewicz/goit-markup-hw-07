@@ -1,0 +1,31 @@
+.customers__heading {
+  color: var(--dark);
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  margin-bottom: 72px;
+}
+.customers__list {
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+}
+.customers__item {
+  display: flex;
+}
+.customers__link {
+  fill: var(--subtle-text);
+  border-radius: 4px;
+  border: 1px solid var(--subtle-text);
+  padding: 16px 32px;
+  transition-property: border, fill;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic-bezier);
+}
+.customers__link:hover,
+.customers__link:focus {
+  fill: var(--pressed-state);
+  border-color: var(--pressed-state);
+}

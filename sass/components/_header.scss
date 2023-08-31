@@ -1,0 +1,97 @@
+.page-header {
+  border-bottom: 1px solid var(--accent);
+  &--wrapper {
+    display: flex;
+    justify-content: space-between;
+    @media screen and (max-width: 767.9px) {
+      padding: 23px 0;
+    }
+    @media screen and (min-width: 768px) and (max-width: 1157.9px) {
+      padding: 16px 0;
+    }
+    @media screen and (min-width: 1158px) {
+      padding: 24px 0;
+    }
+  }
+}
+.nav {
+  display: flex;
+  gap: 249px;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    gap: 120px;
+  }
+  @media screen and (min-width: 1158px) {
+    display: flex;
+    gap: 76px;
+  }
+
+  &__links {
+    @media screen and (max-width: 767.9px) {
+      display: none;
+    }
+    @media screen and (min-width: 768px) {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+    }
+  }
+  &__link {
+    color: var(--dark);
+    @include font(500, 16px, 1.5, 0.02em);
+    text-decoration: none;
+    transition: color 250ms var(--cubic-bezier);
+    position: relative;
+
+    &:hover,
+    &:focus {
+      color: var(--primary-brand);
+    }
+    &.is-active {
+      color: var(--pressed-state);
+    }
+  }
+}
+.contact {
+  @media screen and (max-width: 767.9px) {
+    display: none;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1157.9px) {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  @media screen and (min-width: 1158px) {
+    display: flex;
+    gap: 40px;
+  }
+
+  &__item {
+    @media screen and (min-width: 768px) and (max-width: 1157.9px) {
+      @include font(400, 12px, 1.17, 0.04em);
+    }
+    @media screen and (min-width: 1158px) {
+      @include font(400, 16px, 1.5, 0.02em);
+    }
+  }
+  &__link {
+    color: var(--text);
+    text-decoration: none;
+    transition: color 250ms var(--cubic-bezier);
+
+    &:hover,
+    &:focus {
+      color: var(--primary-brand);
+    }
+  }
+}
+.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -28px;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--pressed-state);
+}
